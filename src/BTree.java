@@ -1,9 +1,3 @@
-/**
- *
- * @author Jorge Salgado Miranda
- * @version 1.0.0
- */
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,13 +1,6 @@
-
-/**
- *
- * @author Jorge Salgado Miranda
- * @version 1.0.0
- */
-
 import java.util.ArrayList;
 
-public class BNode {
+public class BNode {//Clase que nos servira para hacer el nodo de un Arbol B
     static int m;
     ArrayList<Integer> key;
     ArrayList<BNode> child;
