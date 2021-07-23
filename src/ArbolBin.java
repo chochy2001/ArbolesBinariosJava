@@ -66,5 +66,71 @@ public class ArbolBin { //Clase para crear la implementacion del arbol Binario
     	}
     }
 
+    public void eliminarNodo(Nodo nodoEliminar){
 
+        Nodo r = root;
+        /*
+        if(r != null){
+            System.out.println("El arbol esta vacio");
+        }if(r.izq==null){
+            System.out.println("No tiene hijo izquierdo el arbol");
+        }if(r.der==null){
+            System.out.println("No tiene hijo derecho el arbol");
+        }*/
+        Queue<Nodo> queue = new LinkedList();
+        if(r!= null){
+            queue.add(r);
+            while(!queue.isEmpty()){
+                r = (Nodo)queue.poll();
+                System.out.println("Nodo visitado "+r.valor);
+                if(r.izq!=null){
+                    queue.add(r.izq);
+                }if(r.der!=null){
+                    queue.add(r.der);
+                }
+                if(r==nodoEliminar){
+                    System.out.println("Nodo encontrado");
+                    r = null;
+                }else if (r.izq==nodoEliminar){
+                    System.out.println("Nodo encontrado en hijo izquierdo");
+                    r.izq = null;
+                }else if (r.der==nodoEliminar){
+                    System.out.println("Nodo encontrado en hijo derecho");
+                    r.der = null;
+                }
+            }
+        }
+    }
+
+    public void buscarValor(int valor){
+        System.out.println("\n\n\nBuscando el valor: "+ valor);
+        int contador = 0;
+        Nodo r = root;
+
+        Queue<Nodo> queue = new LinkedList();
+        if(r!= null){
+            queue.add(r);
+            while(!queue.isEmpty()){
+                r = (Nodo)queue.poll();
+                System.out.println("Nodo visitado "+r.valor);
+                if(r.izq!=null){
+                    queue.add(r.izq);
+                }if(r.der!=null){
+                    queue.add(r.der);
+                }
+                if( r != null){
+                    if(r.valor== valor){
+                        System.out.println("Valor encontrado");
+                        contador++;
+                    }
+                }
+            }
+        }
+        if(contador == 0){
+            System.out.println("El valor no esta en el arbol\n\n\n");
+        }else{
+            System.out.println("Las veces que se encontró el valor fueron: "+ contador);
+        }
+
+    }
 }
