@@ -69,14 +69,7 @@ public class ArbolBin { //Clase para crear la implementacion del arbol Binario
     public void eliminarNodo(Nodo nodoEliminar){
 
         Nodo r = root;
-        /*
-        if(r != null){
-            System.out.println("El arbol esta vacio");
-        }if(r.izq==null){
-            System.out.println("No tiene hijo izquierdo el arbol");
-        }if(r.der==null){
-            System.out.println("No tiene hijo derecho el arbol");
-        }*/
+
         Queue<Nodo> queue = new LinkedList();
         if(r!= null){
             queue.add(r);
